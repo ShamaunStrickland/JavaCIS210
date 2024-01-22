@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Triangle {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+        printTriangle(rows);
+    }
+
+    static void printTriangle(int Rows) {
+        for (int i = 1; i <= Rows; i++) {
+            for (int j = 1; j <= Rows - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                if (i <= 1 || k == 1 || k == 2 * i - 1) {
+
+                    System.out.print("\u001B[34m*");
+                } else {
+                    System.out.print("\u001B[31m*");
+                }
+            }
+
+            System.out.println("\u001B[0m");
+        }
+
+        for (int i = 1; i <= 2 * Rows - 1; i++) {
+            System.out.print("\u001B[34m*");
+        }
+
+        System.out.println("\u001B[0m");
+    }
+}
+//Shamaun Strickland
